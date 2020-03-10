@@ -1,0 +1,47 @@
+{
+  "name": "port-for-devis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:static": "yarn lint && yarn tsc",
+    "test:jest": "yarn jest",
+    "test:e2e": "(amplify mock api &) && wait-on http-get://localhost:20002 && kill-port 3000 && (yarn dev &) && wait-on http-get://localhost:3000 && cypress run --env PORT=3000",
+    "test:e2e:dev": "(amplify mock api &) && wait-on http-get://localhost:20002 && kill-port 3000 && (yarn dev &) && wait-on http-get://localhost:3000 && cypress open --env PORT=3000",
+    "test": "yarn test:static && yarn test:jest",
+    "storybook": "start-storybook"
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
+  },
+  "dependencies": {
+    "husky": "^4.2.3",
+    "next": "9.3.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-preset-react-app": "^9.1.1",
+    "cypress": "^4.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1"
+  }
+}
