@@ -1,5 +1,10 @@
 import Button from './';
+import { withKnobs, text } from "@storybook/addon-knobs";
+import { action } from '@storybook/addon-actions';
+ 
+export default {
+  title: "Button",
+  decorators: [withKnobs]
+};
 
-export default { title: 'Button' };
-
-export const withText = () => <Button text={'Test Button'}/>;
+export const withText = () => <Button click={action('clicked')} text={text("Text", "Click here")}/>;

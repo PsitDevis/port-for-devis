@@ -8,10 +8,16 @@
     "start": "next start",
     "test:static": "yarn lint && yarn tsc",
     "test:jest": "yarn jest",
+    "test:tdd": "yarn jest --watch-all",
     "test:e2e": "(amplify mock api &) && wait-on http-get://localhost:20002 && kill-port 3000 && (yarn dev &) && wait-on http-get://localhost:3000 && cypress run --env PORT=3000",
     "test:e2e:dev": "(amplify mock api &) && wait-on http-get://localhost:20002 && kill-port 3000 && (yarn dev &) && wait-on http-get://localhost:3000 && cypress open --env PORT=3000",
     "test": "yarn test:static && yarn test:jest",
     "storybook": "start-storybook"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": ["./setupTests.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
@@ -39,6 +45,9 @@
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-react-app": "^9.1.1",
     "cypress": "^4.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
     "jest": "^25.1.0",
