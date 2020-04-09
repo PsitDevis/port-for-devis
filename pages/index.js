@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 import Button from '../components/Button';
+import Input from  '../components/Input'
 
 const Home = () => (
   <Container>
     <Heading>hi there</Heading>
-    <Button text={'Test'}/>
+    <Button text={'Test'} />
+    <Input text={'name'}/>
   </Container>
 )
 const Container = styled.div`
