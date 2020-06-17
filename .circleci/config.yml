@@ -13,8 +13,14 @@ jobs:
                 name: digital-ocean
                 command: ssh -o StrictHostKeyChecking=no ${host} "cd /var/www/dev.psitdevis.com.br/html/port-for-devis"
             - run:
+                name: pull
+                command: git pull origin master
+            - run:
                 name: install
-                command: git pull origin master & npm install & npm run start
+                command: npm install
+            - run:
+                name: start
+                command: npm run start
 
 workflows:
     build-and-test:
