@@ -14,7 +14,7 @@ jobs:
             - run: echo 'THE FINGERPRINT' >> ~/.ssh/known_hosts
             - deploy:
                 name: digital-ocean
-                command: ssh -o StrictHostKeyChecking=no ${host} "cd /var/www/dev.psitdevis.com.br/html/port-for-devi; git pull & npm install & npm run start"
+                command: ssh -o StrictHostKeyChecking=no ${host} "cd /var/www/dev.psitdevis.com.br/html/port-for-devis; git pull & npm install & npm run start"
 
 workflows:
     build-and-test:
