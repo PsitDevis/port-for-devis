@@ -2,10 +2,6 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  install:
-    executor:
-      name: node/default
-    
   build-and-test:
     executor:
       name: node/default
