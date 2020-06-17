@@ -11,9 +11,9 @@ jobs:
           steps:
             - run: npm build
             - run: echo "workdir ${workdir}"
+            - run: echo 'THE FINGERPRINT' >> ~/.ssh/known_hosts
             - deploy:
                 name: digital-ocean
-                
                 command: ssh -o StrictHostKeyChecking=no ${host} "cd "'${workdir}'"; git pull; npm install; npm run start"
 workflows:
     build-and-test:
