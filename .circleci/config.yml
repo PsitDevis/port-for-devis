@@ -14,7 +14,7 @@ jobs:
                 command: ssh -o StrictHostKeyChecking=no ${host} "cd /var/www/dev.psitdevis.com.br/html/port-for-devis"
             - run:
                 name: install
-                command: git pull origin {{ .Environment.CIRCLE_BRANCH }} & npm install & npm run start
+                command: git pull origin master & npm install & npm run start
 
 workflows:
     build-and-test:
