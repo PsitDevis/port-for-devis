@@ -10,8 +10,10 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm build
+            - run: echo "workdir ${workdir}"
             - deploy:
                 name: digital-ocean
+                
                 command: ssh -o StrictHostKeyChecking=no ${host} "cd "'${workdir}'"; git pull; npm install; npm run start"
 workflows:
     build-and-test:
