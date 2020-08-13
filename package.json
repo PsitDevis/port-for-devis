@@ -39,7 +39,7 @@
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/react": "^6.0.5",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.7",
