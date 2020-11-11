@@ -41,7 +41,7 @@
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/react": "^5.3.14",
     "babel-jest": "^25.1.0",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.2.1",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-react-app": "^9.1.1",
     "cypress": "^4.1.0",
